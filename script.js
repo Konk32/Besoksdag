@@ -20,17 +20,23 @@ function clickButton() {
 }
 
 // Funksjon for å øke hvor mye du får av å trykke på knappen
-function increaseClickPower(){
-    if (cash >= clickerPowerCost) {
+function increaseClickPower() {
+  if (cash >= clickerPowerCost) {
     // øke clickerpower
     clickerPower += 1;
+
     // Fjern pengene det kostet
-    cash -= clickerPowerCost;
+    cash -= Math.ceil(clickerPowerCost * 10) / 10;
+
     // Øk prisen på oppgraderingen
     clickerPowerCost *= 1.1;
+
+    // Rund opp til nærmeste 2 desimaler
+    clickerPowerCost = Math.ceil(clickerPowerCost * 100) / 100;
+
     document.getElementById("moneyCounter").innerText = cash;
     document.getElementById("clickerPowerCost-display").innerText = clickerPowerCost;
-    } else {
-    console.log("Not enough cash")
-    }
+  } else {
+    console.log("Not enough cash");
+  }
 }
