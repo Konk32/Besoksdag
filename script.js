@@ -5,7 +5,7 @@ clickerPowerCost = 10;
 clickersCost = 25;
 clickers = 0;
 clickersUpgradeCost = 50;
-clickersPower = 0.01;
+clickersPower = 0.005;
 
 
 // Setter visning av variabler
@@ -23,7 +23,7 @@ function clickButton() {
   cash += clickerPower;
 
   // Oppdater visningen
-  document.getElementById("moneyCounter").innerText = cash;
+  document.getElementById("moneyCounter").innerText = cash.toFixed(0);
 }
 
 // Funksjon for å øke hvor mye du får av å trykke på knappen
@@ -41,7 +41,7 @@ function increaseClickPower() {
     // Rund opp til nærmeste 2 desimaler for prisen
     clickerPowerCost = Math.ceil(clickerPowerCost * 100) / 100;
 
-    document.getElementById("moneyCounter").innerText = cash.toFixed(2);
+    document.getElementById("moneyCounter").innerText = cash.toFixed();
     document.getElementById("clickerPowerCostDisplay").innerText =
       clickerPowerCost.toFixed(1)
   } else {
@@ -65,7 +65,7 @@ function buyClickers() {
     // Rund opp til nærmeste 2 desimaler for prisen
     clickersCost = Math.ceil(clickersCost * 100) / 100;
 
-    document.getElementById("moneyCounter").innerText = cash.toFixed(2);
+    document.getElementById("moneyCounter").innerText = cash.toFixed(0);
     document.getElementById("clickersCostDisplay").innerText = clickersCost.toFixed(1)
   } else {
     console.log("Not enough cash");
@@ -78,7 +78,7 @@ function upgradeClickers() {
  // sjekk om du har nok penger
   if (cash >= clickersUpgradeCost) {
     // Oppgradere clickers
-    clickersPower += 0.005;
+    clickersPower *= 1.13;
 
     // Fjern pengene det kostet
     cash = Math.ceil((cash - clickersUpgradeCost) * 10) / 10;
@@ -89,7 +89,7 @@ function upgradeClickers() {
     // Rund opp til nærmeste 2 desimaler for prisen
     clickersUpgradeCost = Math.ceil(clickersUpgradeCost * 100) / 100;
 
-    document.getElementById("moneyCounter").innerText = cash.toFixed(2);
+    document.getElementById("moneyCounter").innerText = cash.toFixed(0);
     document.getElementById("upgradeClickersCostDisplay").innerText = clickersUpgradeCost.toFixed(1);
   } else {
     console.log("Not enough cash");
@@ -99,8 +99,8 @@ function upgradeClickers() {
 // Funksjon for å automatisk gi penger basert på hvor mange clickers
 
 function gameTick(){
-    cash += Math.ceil((clickers * clickersPower) * 10) / 10;
-    document.getElementById("moneyCounter").innerText = cash.toFixed(2);
+    cash += clickers * clickersPower
+    document.getElementById("moneyCounter").innerText = cash.toFixed(0);
 }
 
 setInterval(gameTick, 10);
