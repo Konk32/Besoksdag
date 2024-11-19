@@ -101,6 +101,10 @@ function upgradeClickers() {
 function gameTick(){
     cash += clickers * clickersPower
     document.getElementById("moneyCounter").innerText = cash.toFixed(0);
+
+    // Update cash per second display
+
+    document.getElementById("cashPerSecondDisplay").innerText = (clickers * clickersPower * 100).toFixed(2) + " Cash per second";
 }
 
 setInterval(gameTick, 10);
