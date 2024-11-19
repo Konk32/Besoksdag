@@ -2,18 +2,35 @@
 startingCash = 0;
 startingClickerPower = 1;
 startingItems = [];
+startingclickerPowerCost = 10;
 
 cash = startingCash;
 clickerPower = startingClickerPower;
 items = startingItems;
+clickerPowerCost = startingclickerPowerCost;
 
-// Funksjon for klikking på knappen
+// Funksjon for trykking på knappen
 
 function clickButton() {
   // Legg til penger
   cash += clickerPower;
 
   // Oppdater visningen
-  document.getElementById("money-counter").innerText = cash;
+  document.getElementById("moneyCounter").innerText = cash;
 }
 
+// Funksjon for å øke hvor mye du får av å trykke på knappen
+function increaseClickPower(){
+    if (cash >= clickerPowerCost) {
+    // øke clickerpower
+    clickerPower += 1;
+    // Fjern pengene det kostet
+    cash -= clickerPowerCost;
+    // Øk prisen på oppgraderingen
+    clickerPowerCost *= 1.1;
+    document.getElementById("moneyCounter").innerText = cash;
+    document.getElementById("clickerPowerCost-display").innerText = clickerPowerCost;
+    } else {
+    console.log("Not enough cash")
+    }
+}
