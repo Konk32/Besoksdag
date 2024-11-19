@@ -1,0 +1,17 @@
+
+#mainBox {
+    display: flex;
+    justify-content: center;
+}
+
+#leftBox {
+    width: 33%;
+}
+
+#middleBox {
+    width: 33%;
+}
+
+#rightBox {
+    width: 33%;
+}
