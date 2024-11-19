@@ -29,6 +29,21 @@ body {
     text-decoration: underline;
 }
 
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+
+}
+.bounce {
+    animation: bounce 0.2s ease-in-out;
+}
 
 #rightBox {
     width: 33%;
