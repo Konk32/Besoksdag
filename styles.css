@@ -1,5 +1,8 @@
 body {
     font-family: 'Courier New', Courier, monospace;
+    background-image: url(Images/Background\ for\ web\ game.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #header {
@@ -57,4 +60,9 @@ body {
 
 .shopItems {
     text-align: left;
+    color: aliceblue;
+    height: 50px;
+    background-image: url(Images/shopItemButtonImg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
