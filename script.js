@@ -24,7 +24,7 @@ function clickButton() {
   document.getElementById("moneyCounter").classList.add('bounce');
   setTimeout(() => {
     document.getElementById("moneyCounter").classList.remove('bounce');
-}, 1000); // 1000ms = 1 second
+}, 150); // 1000ms = 1 second
   // Oppdater visningen
   document.getElementById("moneyCounter").innerText = cash.toFixed(0);
 }
