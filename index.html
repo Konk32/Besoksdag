@@ -9,21 +9,31 @@
   <body>
     <h1 id="header">Totally Awesome Clicker Game</h1>
     <div id="mainBox">
-      <div id="leftBox">
-      </div>
+      <div id="leftBox"></div>
       <div id="middleBox">
-      <p>The best clicker game ever!</p>
-      <div id="clicker-container">
-          <button id="clicker-button" onclick="clickButton()">Click here to earn money!</button>
+        <p>The best clicker game ever!</p>
+        <div id="clicker-container">
+          <button id="clicker-button" onclick="clickButton()">
+            Click here to earn money!
+          </button>
           <p id="moneyCounter">Money: $0</p>
         </div>
       </div>
       <div id="rightBox">
-      <div id="upgrades-container">
-          <button onclick="increaseClickPower()">Upgrade clicking power <div id="clickerPowerCostDisplay">Cost: 10</div></button>
-        <button onclick="buyClickers()">Buy automatic clicker <div id="clickersCostDisplay">Cost: 25</div></button>
-        <button onclick="upgradeClickers()">Upgrade automatic clicker <div id="upgradeClickersCostDisplay">Cost: 50</div></button>
-      </div>
+        <div id="upgrades-container">
+          <button onclick="increaseClickPower()">
+            Upgrade clicking power
+            <div id="clickerPowerCostDisplay">Cost: 10</div>
+          </button>
+          <button onclick="buyClickers()">
+            Buy automatic clicker
+            <div id="clickersCostDisplay">Cost: 25</div>
+          </button>
+          <button onclick="upgradeClickers()">
+            Upgrade automatic clicker
+            <div id="upgradeClickersCostDisplay">Cost: 50</div>
+          </button>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>
