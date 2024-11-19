@@ -7,29 +7,31 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1 id="header">Totally Awesome Clicker Game</h1>
+    <div id="header">  
+      <h1 >Totally Awesome Clicker Game</h1>
+      <p>The best clicker game ever!</p>
+    </div>   
     <div id="mainBox">
       <div id="leftBox"></div>
       <div id="middleBox">
-        <p>The best clicker game ever!</p>
         <div id="clicker-container">
+          <p id="moneyCounter">Money: $0</p>
           <button id="clicker-button" onclick="clickButton()">
             Click here to earn money!
           </button>
-          <p id="moneyCounter">Money: $0</p>
         </div>
       </div>
       <div id="rightBox">
         <div id="upgrades-container">
-          <button onclick="increaseClickPower()">
+          <button onclick="increaseClickPower()" class="shopItems">
             Upgrade clicking power
             <div id="clickerPowerCostDisplay">Cost: 10</div>
           </button>
-          <button onclick="buyClickers()">
+          <button onclick="buyClickers()"class="shopItems">
             Buy automatic clicker
             <div id="clickersCostDisplay">Cost: 25</div>
           </button>
-          <button onclick="upgradeClickers()">
+          <button onclick="upgradeClickers()"class="shopItems">
             Upgrade automatic clicker
             <div id="upgradeClickersCostDisplay">Cost: 50</div>
           </button>

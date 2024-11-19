@@ -1,10 +1,13 @@
 #header {
     text-align: center;
+    padding-top: 5%;
 }
 
 #mainBox {
     display: flex;
+    padding-top: 2%;
     justify-content: center;
+    margin: auto;
 }
 
 #leftBox {
@@ -14,9 +17,18 @@
 #middleBox {
     width: 33%;
     text-align: center;
-    
 }
 
 #rightBox {
     width: 33%;
+}
+
+#upgrades-container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+.shopItems {
+    text-align: left;
 }
