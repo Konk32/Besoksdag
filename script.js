@@ -43,7 +43,7 @@ function increaseClickPower() {
 
     document.getElementById("moneyCounter").innerText = cash.toFixed();
     document.getElementById("clickerPowerCostDisplay").innerText =
-      clickerPowerCost.toFixed(1)
+      clickerPowerCost.toFixed(0)
   } else {
     console.log("Not enough cash");
   }
@@ -66,7 +66,7 @@ function buyClickers() {
     clickersCost = Math.ceil(clickersCost * 100) / 100;
 
     document.getElementById("moneyCounter").innerText = cash.toFixed(0);
-    document.getElementById("clickersCostDisplay").innerText = clickersCost.toFixed(1)
+    document.getElementById("clickersCostDisplay").innerText = clickersCost.toFixed(0)
   } else {
     console.log("Not enough cash");
   }
@@ -90,7 +90,7 @@ function upgradeClickers() {
     clickersUpgradeCost = Math.ceil(clickersUpgradeCost * 100) / 100;
 
     document.getElementById("moneyCounter").innerText = cash.toFixed(0);
-    document.getElementById("upgradeClickersCostDisplay").innerText = clickersUpgradeCost.toFixed(1);
+    document.getElementById("upgradeClickersCostDisplay").innerText = clickersUpgradeCost.toFixed(0);
   } else {
     console.log("Not enough cash");
   }
