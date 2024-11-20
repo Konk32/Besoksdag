@@ -1,5 +1,6 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
     background-image: url(Images/Background\ for\ web\ game.webp);
     background-repeat: no-repeat;
     background-size: cover;
@@ -59,10 +60,19 @@ body {
 }
 
 .shopItems {
+    display: flex;
+    align-items: center;
     text-align: left;
-    color: aliceblue;
+    font-weight: bold;
+    font-size: larger;
+    text-shadow: 1cm;
+    color: white;
     height: 50px;
     background-image: url(Images/shopItemButtonImg.png);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#clickerPowerCostDisplay {
+    
 }
