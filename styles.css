@@ -4,6 +4,8 @@ body {
     background-image: url(Images/Background\ for\ web\ game.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0%;
+    overflow: hidden;
 }
 
 #header {
@@ -11,26 +13,36 @@ body {
     padding-top: 5%;
 }
 
+#headerBar {
+
+}
+
 #mainBox {
     display: flex;
-    padding-top: 2%;
     justify-content: center;
     margin: auto;
 }
 
 #leftBox {
-    width: 33%;
+    width: 30%;
 }
 
 #middleBox {
-    width: 33%;
+    width: 40%;
     text-align: center;
+    background-image: url(Images/shadedBordersSoft.png);
+    background-size: cover;
 }
 
 #moneyCounter {
     font-size: 60px;
     font-weight: bold;
     text-decoration: underline;
+}
+
+#clickButton {
+    width: 75%;
+    padding-top: 6%;
 }
 
 @keyframes bounce {
@@ -49,14 +61,31 @@ body {
     animation: bounce 0.2s ease-in-out;
 }
 
+@keyframes bounce2 {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        
+    }
+
+    50% {
+        transform: translateY(-6px) scale(1.005);
+    }
+
+}
+.bounce2 {
+    animation: bounce 0.2s ease-in-out;
+}
+
 #rightBox {
-    width: 33%;
+    width: 30%;
 }
 
 #upgrades-container {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 94%;
+    padding-left: 6%;
 }
 
 .shopItems {
@@ -74,5 +103,5 @@ body {
 }
 
 #clickerPowerCostDisplay {
-    
+
 }

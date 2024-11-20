@@ -25,6 +25,10 @@ function clickButton() {
   setTimeout(() => {
     document.getElementById("moneyCounter").classList.remove('bounce');
 }, 150); // 1000ms = 1 second
+  document.getElementById("clickButton").classList.add('bounce2');
+  setTimeout(() => {
+  document.getElementById("clickButton").classList.remove('bounce2');
+}, 150); 
   // Oppdater visningen
   document.getElementById("moneyCounter").innerText = cash.toFixed(0);
 }
