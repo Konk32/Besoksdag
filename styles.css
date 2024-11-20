@@ -1,3 +1,8 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     height: 100%;
     width: 100%;
@@ -14,14 +19,13 @@ body {
     text-align: center;
 }
 
-#headerBar {
-
-}
 
 #mainBox {
     display: flex;
     justify-content: center;
     margin: auto;
+    height: 100%;
+    width: 100%;
 }
 
 #leftBox {
@@ -89,6 +93,7 @@ body {
     flex-direction: column;
     width: 94%;
     padding-left: 6%;
+
 }
 
 .shopItems {
@@ -105,12 +110,11 @@ body {
     background-size: cover;
 }
 
-
-.shopItemsPrice {
-    text-align: center;
+.shopItemsText {
+    padding-left: 2%;
 }
 
 
-#clickerPowerCostDisplay {
 
+#clickerPowerCostDisplay {
 }
