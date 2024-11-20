@@ -26,7 +26,7 @@ function clickButton() {
     document.getElementById("moneyCounter").classList.remove('bounce');
 }, 150); // 1000ms = 1 second
   // Oppdater visningen
-  document.getElementById("moneyCounter").innerText = cash.toFixed(0);
+  document.getElementById("moneyCounter").innerText = formatInt(1, cash);
 }
 
 // Funksjon for å øke hvor mye du får av å trykke på knappen
@@ -44,9 +44,9 @@ function increaseClickPower() {
     // Rund opp til nærmeste 2 desimaler for prisen
     clickerPowerCost = Math.ceil(clickerPowerCost * 100) / 100;
 
-    document.getElementById("moneyCounter").innerText = cash.toFixed();
+    document.getElementById("moneyCounter").innerText = formatInt(1, cash);
     document.getElementById("clickerPowerCostDisplay").innerText =
-      clickerPowerCost.toFixed(0)
+    " " + formatInt(1, clickerPowerCost)
   } else {
     console.log("Not enough cash");
   }
@@ -68,8 +68,8 @@ function buyClickers() {
     // Rund opp til nærmeste 2 desimaler for prisen
     clickersCost = Math.ceil(clickersCost * 100) / 100;
 
-    document.getElementById("moneyCounter").innerText = cash.toFixed(0);
-    document.getElementById("clickersCostDisplay").innerText = clickersCost.toFixed(0)
+    document.getElementById("moneyCounter").innerText = formatInt(1, cash);
+    document.getElementById("clickersCostDisplay").innerText = " " + formatInt(1, clickersCost);
   } else {
     console.log("Not enough cash");
   }
@@ -92,8 +92,8 @@ function upgradeClickers() {
     // Rund opp til nærmeste 2 desimaler for prisen
     clickersUpgradeCost = Math.ceil(clickersUpgradeCost * 100) / 100;
 
-    document.getElementById("moneyCounter").innerText = cash.toFixed(0);
-    document.getElementById("upgradeClickersCostDisplay").innerText = clickersUpgradeCost.toFixed(0);
+    document.getElementById("moneyCounter").innerText = formatInt(1, cash);
+    document.getElementById("upgradeClickersCostDisplay").innerText = " " + formatInt(1, clickersUpgradeCost);
   } else {
     console.log("Not enough cash");
   }
@@ -103,11 +103,26 @@ function upgradeClickers() {
 
 function gameTick(){
     cash += clickers * clickersPower
-    document.getElementById("moneyCounter").innerText = cash.toFixed(0);
+    document.getElementById("moneyCounter").innerText = formatInt(1, cash);
 
     // Update cash per second display
 
-    document.getElementById("cashPerSecondDisplay").innerText = (clickers * clickersPower * 100).toFixed(2) + " Cash per second";
+    document.getElementById("cashPerSecondDisplay").innerText = formatInt(2, clickers * clickersPower * 100) + " Cash per second";
 }
 
 setInterval(gameTick, 10);
+
+
+// Formatering av Pengene
+function formatInt(decimals, value) {
+  if (value < 1000) {
+    return value.toFixed(decimals - 1);
+  }
+
+  const suffixes = [" ", "K", "M", "B", "T", "Qa", "Qi"];
+  let tier = Math.floor(Math.log10(Math.abs(value)) / 3);
+  const suffix = suffixes[tier];
+  const scale = Math.pow(10, tier * 3);
+  const scaledValue = value / scale;
+  return scaledValue.toFixed(decimals) + suffix;
+};
