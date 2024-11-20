@@ -1,4 +1,6 @@
 body {
+    height: 100%;
+    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     background-image: url(Images/Background\ for\ web\ game.webp);
@@ -10,7 +12,6 @@ body {
 
 #header {
     text-align: center;
-    padding-top: 5%;
 }
 
 #headerBar {
@@ -43,6 +44,8 @@ body {
 #clickButton {
     width: 75%;
     padding-top: 6%;
+    
+
 }
 
 @keyframes bounce {
@@ -101,6 +104,12 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+.shopItemsPrice {
+    text-align: center;
+}
+
 
 #clickerPowerCostDisplay {
 
