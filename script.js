@@ -4,6 +4,12 @@ clickerPower = 10;
 clickerPowerCost = 10;
 clickersCost = 25;
 clickers = 0;
+grandmas = 0;
+grandmasCost = 100;
+grandmaPower = 0.05;
+farms = 0;
+farmCost = 2000;
+farmPower = 1;
 clickersUpgradeCost = 50;
 clickersPower = 0.005;
 
@@ -13,22 +19,19 @@ clickersPower = 0.005;
 document.getElementById("moneyCounter").innerText = cash;
 document.getElementById("clickerPowerCostDisplay").innerText = clickerPowerCost;
 document.getElementById("clickersCostDisplay").innerText = clickersCost;
-document.getElementById("upgradeClickersCostDisplay").innerText = clickersUpgradeCost;
-
+document.getElementById("upgradeAutoClickersCostDisplay").innerText = clickersUpgradeCost;
+document.getElementById("grandmasCostDisplay").innerText = grandmasCost;
+document.getElementById("farmCostDisplay").innerText = farmCost;
 
 // Funksjon for trykking på knappen
 
 function clickButton() {
   // Legg til penger
   cash += clickerPower;
-  document.getElementById("moneyCounter").classList.add('bounce');
+  document.getElementById("clickButton").classList.add('bounce');
   setTimeout(() => {
-    document.getElementById("moneyCounter").classList.remove('bounce');
+    document.getElementById("clickButton").classList.remove('bounce');
 }, 150); // 1000ms = 1 second
-  document.getElementById("clickButton").classList.add('bounce2');
-  setTimeout(() => {
-  document.getElementById("clickButton").classList.remove('bounce2');
-}, 150); 
   // Oppdater visningen
   document.getElementById("moneyCounter").innerText = formatInt(1, cash);
 }
@@ -56,6 +59,31 @@ function increaseClickPower() {
   }
 }
 
+// Funksjon for å oppgradere Clickers
+
+function upgradeClickers() {
+  // sjekk om du har nok penger
+   if (cash >= clickersUpgradeCost) {
+     // Oppgradere clickers
+     clickersPower *= 2.3;
+ 
+     // Fjern pengene det kostet
+     cash = Math.ceil((cash - clickersUpgradeCost) * 10) / 10;
+ 
+     // øk prisen på oppgraderingen
+     clickersUpgradeCost *= 9;
+ 
+     // Rund opp til nærmeste 2 desimaler for prisen
+     clickersUpgradeCost = Math.ceil(clickersUpgradeCost * 100) / 100;
+ 
+     document.getElementById("moneyCounter").innerText = formatInt(1, cash);
+     document.getElementById("upgradeAutoClickersCostDisplay").innerText = " " + formatInt(1, clickersUpgradeCost);
+   } else {
+     console.log("Not enough cash");
+   }
+ }
+
+
 // Funksjon for å kjøpe clickers
 function buyClickers() {
   // Sjekk om du har nok penger
@@ -67,7 +95,7 @@ function buyClickers() {
     cash = Math.ceil((cash - clickersCost) * 10) / 10;
 
     // øk prisen på oppgraderingen
-    clickersCost *= 1.2;
+    clickersCost *= 1.3;
 
     // Rund opp til nærmeste 2 desimaler for prisen
     clickersCost = Math.ceil(clickersCost * 100) / 100;
@@ -79,39 +107,69 @@ function buyClickers() {
   }
 }
 
-// Funksjon for å oppgradere Clickers
-
-function upgradeClickers() {
- // sjekk om du har nok penger
-  if (cash >= clickersUpgradeCost) {
-    // Oppgradere clickers
-    clickersPower *= 1.13;
+// Funksjon for å kjøpe clickers
+function buyGrandmas() {
+  // Sjekk om du har nok penger
+  if (cash >= grandmasCost) {
+    // Kjøp clickers
+    grandmas += 1;
 
     // Fjern pengene det kostet
-    cash = Math.ceil((cash - clickersUpgradeCost) * 10) / 10;
+    cash = Math.ceil((cash - grandmasCost) * 10) / 10;
 
     // øk prisen på oppgraderingen
-    clickersUpgradeCost *= 1.3;
+    grandmasCost *= 1.3;
 
     // Rund opp til nærmeste 2 desimaler for prisen
-    clickersUpgradeCost = Math.ceil(clickersUpgradeCost * 100) / 100;
+    grandmasCost = Math.ceil(grandmasCost * 100) / 100;
 
     document.getElementById("moneyCounter").innerText = formatInt(1, cash);
-    document.getElementById("upgradeClickersCostDisplay").innerText = " " + formatInt(1, clickersUpgradeCost);
+    document.getElementById("grandmasCostDisplay").innerText = " " + formatInt(1, grandmasCost);
   } else {
     console.log("Not enough cash");
   }
 }
 
+// Funksjon for å kjøpe clickers
+function buyFarms() {
+  // Sjekk om du har nok penger
+  if (cash >= farmCost) {
+    // Kjøp clickers
+    farms += 1;
+
+    // Fjern pengene det kostet
+    cash = Math.ceil((cash - farmCost) * 10) / 10;
+
+    // øk prisen på oppgraderingen
+    farmCost *= 1.3;
+
+    // Rund opp til nærmeste 2 desimaler for prisen
+    farmCost = Math.ceil(farmCost * 100) / 100;
+
+    document.getElementById("moneyCounter").innerText = formatInt(1, cash);
+    document.getElementById("farmCostDisplay").innerText = " " + formatInt(1, farmCost);
+  } else {
+    console.log("Not enough cash");
+  }
+}
+
+
 // Funksjon for å automatisk gi penger basert på hvor mange clickers
 
 function gameTick(){
-    cash += clickers * clickersPower
+  const clickersIncome = clickers * clickersPower;
+  const grandmasIncome = grandmas * grandmaPower;
+  const farmsIncome = farms * farmPower;
+
+  // Add the total income to cash
+  cash += clickersIncome + grandmasIncome + farmsIncome;
+
     document.getElementById("moneyCounter").innerText = formatInt(1, cash);
 
     // Update cash per second display
 
-    document.getElementById("cashPerSecondDisplay").innerText = formatInt(2, clickers * clickersPower * 100) + " Cash per second";
+    const totalIncomePerSecond = (clickersIncome + grandmasIncome + farmsIncome) * 100; // Multiply by 100 to convert ticks to seconds
+    document.getElementById("cashPerSecondDisplay").innerText = formatInt(2, totalIncomePerSecond) + " Cash per second";
 }
 
 setInterval(gameTick, 10);
