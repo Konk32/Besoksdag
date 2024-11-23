@@ -68,32 +68,61 @@ body {
     animation: bounce 0.2s ease-in-out;
 }
 
-@keyframes bounce2 {
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-        
-    }
 
-    50% {
-        transform: translateY(-6px) scale(1.005);
-    }
-
-}
-.bounce2 {
-    animation: bounce 0.2s ease-in-out;
-}
 
 #rightBox {
     width: 30%;
 }
 
-#upgrades-container {
+#headerShop {
+    text-align: center;
+}
+
+
+#shop-header {
+    height: 5%;
+    width: 100%;
+}
+
+#upgrade-container {
+    height: 7%;
+    width: 100%;
+
+}
+
+#upgradeItemClicker {
+    background-image: url(Images/upgradeAutomaticClicker.png);
+    background-size: cover;
+}
+
+#upgradeClickersCostDisplay {
+    display: none;
+    color: white;
+    font-size: x-large;
+    font-weight: 800;
+    
+}
+
+/* Show the cost display when hovering over the button */
+#upgradeItemClicker:hover #upgradeClickersCostDisplay {
+    display: block;
+}
+
+.upgradeItem {
+    height: 70px;
+    width: 70px;
+}
+
+
+#shop-container {
     display: flex;
     flex-direction: column;
-    width: 94%;
-    padding-left: 6%;
+    width: 100%;
+}
 
+.panelHorizontal {
+    width: 100%;
+    height: 3%;
 }
 
 .shopItems {

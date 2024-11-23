@@ -23,7 +23,15 @@
       </div>
       <img src="Images/panelVertical.png" alt="" style="height: 100%">
       <div id="rightBox">
-        <div id="upgrades-container">
+        <div id="shop-header"> <h1 id="headerShop">Store</h1></div>
+        <img src="images/panelHorizontal.png" class="panelHorizontal">
+        <div id="upgrade-container">
+          <button onclick="upgradeClickers()"class="upgradeItem" id="upgradeItemClicker">
+            <div id="upgradeClickersCostDisplay">Cost: 50</div>
+          </button>
+        </div>
+        <img src="images/panelHorizontal.png" class="panelHorizontal">
+        <div id="shop-container">
           <button onclick="increaseClickPower()" class="shopItems">
             <h4 class="shopItemsText">Upgrade clicking power  </h4>
             <div id="clickerPowerCostDisplay" style="padding-left: 5%;">Cost: 10</div>
@@ -31,10 +39,6 @@
           <button onclick="buyClickers()"class="shopItems">
             <h4 class="shopItemsText">Buy automatic clicker  </h4>
             <div id="clickersCostDisplay" style="padding-left: 5%;">Cost: 25</div>
-          </button>
-          <button onclick="upgradeClickers()"class="shopItems">
-            <h4 class="shopItemsText">Upgrade automatic clicker  </h4>
-            <div id="upgradeClickersCostDisplay" style="padding-left: 5%;">Cost: 50</div>
           </button>
         </div>
       </div>

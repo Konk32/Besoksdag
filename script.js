@@ -122,8 +122,36 @@ function formatInt(decimals, value) {
   if (value < 1000) {
     return value.toFixed(decimals - 1);
   }
+// Suffixes for large numbers:
+// " "   -> No suffix (numbers less than 1,000)
+// "K"   -> Thousand (10^3)
+// "M"   -> Million (10^6)
+// "B"   -> Billion (10^9)
+// "T"   -> Trillion (10^12)
+// "Qa"  -> Quadrillion (10^15)
+// "Qi"  -> Quintillion (10^18)
+// "Sx"  -> Sextillion (10^21)
+// "Sp"  -> Septillion (10^24)
+// "Oc"  -> Octillion (10^27)
+// "No"  -> Nonillion (10^30)
+// "Dc"  -> Decillion (10^33)
+// "Ud"  -> Undecillion (10^36)
+// "Dd"  -> Duodecillion (10^39)
+// "Td"  -> Tredecillion (10^42)
+// "Qad" -> Quattuordecillion (10^45)
+// "Qid" -> Quindecillion (10^48)
+// "Sd"  -> Sexdecillion (10^51)
+// "Spd" -> Septendecillion (10^54)
+// "Ocd" -> Octodecillion (10^57)
+// "Nod" -> Novemdecillion (10^60)
+// "Vg"  -> Vigintillion (10^63)
+  const suffixes = [
+    " ", "K", "M", "B", "T", "Qa", "Qi",
+    "Sx", "Sp", "Oc", "No", "Dc",
+    "Ud", "Dd", "Td", "Qad", "Qid",
+    "Sd", "Spd", "Ocd", "Nod", "Vg"
+  ];
 
-  const suffixes = [" ", "K", "M", "B", "T", "Qa", "Qi"];
   let tier = Math.floor(Math.log10(Math.abs(value)) / 3);
   const suffix = suffixes[tier];
   const scale = Math.pow(10, tier * 3);
