@@ -1,17 +1,32 @@
 // Definer variabler for lagring av penger osv
 cash = 0;
-clickerPower = 10;
+
 clickerPowerCost = 10;
-clickersCost = 25;
+// Hvor mye 1 klikk genererer
+clickerPower = 10;
+
+
 clickers = 0;
+clickersCost = 25;
+clickersUpgradeCost = 50;
+// Hvor mye Automatiske Clickers genererer per GameTick
+clickersPower = 0.005;
+
+
 grandmas = 0;
 grandmasCost = 100;
+// Hvor mye Grandmas genererer per GameTick
 grandmaPower = 0.05;
+
+
 farms = 0;
 farmCost = 2000;
+// Hvor mye Farms genererer per tik
 farmPower = 1;
-clickersUpgradeCost = 50;
-clickersPower = 0.005;
+
+
+
+
 
 
 // Setter visning av variabler

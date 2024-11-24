@@ -8,7 +8,7 @@ body {
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
-    background-image: url(Images/Background\ for\ web\ game.webp);
+    background-image: url(Images/Background\ for\ web\ game.webp); /* Bakgrunnen til hele nettsiden*/
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0%;
@@ -35,7 +35,7 @@ body {
 #middleBox {
     width: 40%;
     text-align: center;
-    background-image: url(Images/shadedBordersSoft.png);
+    background-image: url(Images/shadedBordersSoft.png); /* Bakgrunns skygge til midt boxen*/
     background-size: cover;
 }
 
