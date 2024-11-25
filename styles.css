@@ -160,6 +160,10 @@ width: 50px;
     background-size: cover;
 }
 
+.shopItems:hover {
+    opacity: 86%;
+}
+
 .shopItemsText {
     padding-left: 2%;
 }
