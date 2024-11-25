@@ -1,174 +1,155 @@
 html {
     height: 100%;
-    width: 100%;
+    width: 100%; /* Sikrer at HTML-elementet dekker hele siden */
 }
 
 body {
     height: 100%;
     width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    background-image: url(Images/Background\ for\ web\ game.webp); /* Bakgrunnen til hele nettsiden*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0%;
-    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Definerer skriftstilen for hele nettsiden */
+    color: white; /* Setter standard tekstfarge */
+    background-image: url(Images/Background\ for\ web\ game.webp); /* Bakgrunnen til hele nettsiden */
+    background-repeat: no-repeat; /* Hindrer at bakgrunnsbildet gjentas */
+    background-size: cover; /* Tilpasser bakgrunnsbildet til å dekke hele siden */
+    margin: 0%; /* Fjerner standard margin */
+    overflow: hidden; /* Skjuler eventuell scrolling */
 }
 
 #header {
-    text-align: center;
+    text-align: center; /* Sentrerer innholdet i headeren */
 }
 
-
 #mainBox {
-    display: flex;
-    justify-content: center;
-    margin: auto;
+    display: flex; /* Bruker flexbox for å organisere hovedlayouten */
+    justify-content: center; /* Sentraliserer innhold horisontalt */
+    margin: auto; /* Justerer marger automatisk for sentrering */
     height: 100%;
-    width: 100%;
+    width: 100%; /* Dekker hele bredden og høyden */
 }
 
 #leftBox {
-    width: 30%;
+    width: 30%; /* Setter bredden til venstre boks */
 }
 
 #middleBox {
-    width: 40%;
-    text-align: center;
-    background-image: url(Images/shadedBordersSoft.png); /* Bakgrunns skygge til midt boxen*/
-    background-size: cover;
+    width: 40%; /* Midtseksjonens bredde */
+    text-align: center; /* Sentrerer tekst innvendig */
+    background-image: url(Images/shadedBordersSoft.png); /* Bakgrunnsbilde for midtboksen */
+    background-size: cover; /* Fyller midtboksen med bakgrunnsbildet */
 }
 
 #moneyCounter {
-    font-size: 60px;
-    font-weight: bold;
-    text-decoration: underline;
+    font-size: 60px; /* Stor tekst for penge-telleren */
+    font-weight: bold; /* Gjør teksten fet */
+    text-decoration: underline; /* Understreker teksten */
 }
 
 #clickButton {
-    width: 75%;
-    padding-top: 6%;
-    
-
+    width: 75%; /* Setter knappens bredde */
+    padding-top: 6%; /* Gir ekstra plass over knappen */
 }
 
 @keyframes bounce {
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-        
+    0%, 100% {
+        transform: translateY(0) scale(1); /* Starter og slutter uten forandring */
     }
 
     50% {
-        transform: translateY(-10px) scale(1.1);
+        transform: translateY(-10px) scale(1.1); /* Gir en "hopp"-effekt i midten av animasjonen */
     }
-
 }
 .bounce {
-    animation: bounce 0.2s ease-in-out;
+    animation: bounce 0.2s ease-in-out; /* Bruker "bounce"-animasjonen med rask effekt */
 }
 
-
-
 #rightBox {
-    width: 30%;
+    width: 30%; /* Setter bredden til høyre boks */
 }
 
 #headerShop {
-    text-align: center;
+    text-align: center; /* Sentrerer headeren i butikken */
 }
 
-
 #shop-header {
-    height: 5%;
-    width: 100%;
+    height: 5%; /* Høyde for butikk-headeren */
+    width: 100%; /* Full bredde for headeren */
 }
 
 #upgrade-container {
-    height: 7%;
-    width: 100%;
-
+    height: 7%; /* Høyde for oppgraderingsbeholderen */
+    width: 100%; /* Full bredde for oppgraderingsseksjonen */
 }
 
 #upgradeItemClicker {
-    background-image: url(Images/upgradeClicker.png);
-    background-size: cover;
+    background-image: url(Images/upgradeClicker.png); /* Bakgrunnsbilde for klikker-oppgraderingen */
+    background-size: cover; /* Fyller hele knappen med bildet */
 }
 
-
 #upgradeItemAutoClicker {
-    background-image: url(Images/upgradeAutomaticClicker.png);
-    background-size: cover;
+    background-image: url(Images/upgradeAutomaticClicker.png); /* Bakgrunnsbilde for auto-klikker-oppgraderingen */
+    background-size: cover; /* Fyller hele knappen med bildet */
 }
 
 #clickerPowerCostDisplay {
-    display: none;
-    color: white;
-    text-shadow: 2px 2px brown;
-    font-size: x-large;
-    font-weight: 800;
-    
+    display: none; /* Skjuler kostnadsteksten som standard */
+    color: white; /* Farge på kostnadsteksten */
+    text-shadow: 2px 2px brown; /* Bruker skyggeeffekt for bedre lesbarhet */
+    font-size: x-large; /* Setter fonten til en stor størrelse */
+    font-weight: 800; /* Gjør teksten ekstra fet */
 }
 
-/* Show the cost display when hovering over the button */
+/* Viser kostnadsteksten ved hover */
 #upgradeItemClicker:hover #clickerPowerCostDisplay {
-    display: block;
+    display: block; /* Gjør teksten synlig ved hover */
 }
 
 #upgradeAutoClickersCostDisplay {
-    display: none;
-    color: white;
-    text-shadow: 2px 2px brown;
-    font-size: x-large;
-    font-weight: 800;
-    
+    display: none; /* Skjuler kostnadsteksten som standard */
+    color: white; /* Farge på kostnadsteksten */
+    text-shadow: 2px 2px brown; /* Bruker skyggeeffekt for bedre lesbarhet */
+    font-size: x-large; /* Setter fonten til en stor størrelse */
+    font-weight: 800; /* Gjør teksten ekstra fet */
 }
 
-/* Show the cost display when hovering over the button */
+/* Viser kostnadsteksten ved hover */
 #upgradeItemAutoClicker:hover #upgradeAutoClickersCostDisplay {
-    display: block;
+    display: block; /* Gjør teksten synlig ved hover */
 }
 
 .upgradeItem {
-height: 50px;
-width: 50px;
+    height: 50px; /* Høyde på oppgraderingsknappen */
+    width: 50px; /* Bredde på oppgraderingsknappen */
 }
 
-
 #shop-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    display: flex; /* Bruker flexbox for butikkens layout */
+    flex-direction: column; /* Ordner elementene vertikalt */
+    width: 100%; /* Full bredde på butikken */
 }
 
 .panelHorizontal {
-    width: 100%;
-    height: 3%;
+    width: 100%; /* Full bredde for horisontale paneler */
+    height: 3%; /* Smal høyde for horisontale paneler */
 }
 
 .shopItems {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    font-weight: bold;
-    font-size: larger;
-    text-shadow: 1cm;
-    color: white;
-    height: 50px;
-    background-image: url(Images/shopItemButtonImg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex; /* Bruker flexbox for butikkens elementer */
+    align-items: center; /* Sentrerer innhold vertikalt */
+    text-align: left; /* Teksten er venstrejustert */
+    font-weight: bold; /* Fet tekst */
+    font-size: larger; /* Større tekst */
+    text-shadow: 1cm; /* Usikker betydning, sannsynlig en skrivefeil */
+    color: white; /* Setter tekstfargen */
+    height: 50px; /* Høyde på butikkelementene */
+    background-image: url(Images/shopItemButtonImg.png); /* Bakgrunnsbilde for butikkelementene */
+    background-repeat: no-repeat; /* Hindrer at bakgrunnsbildet gjentas */
+    background-size: cover; /* Tilpasser bakgrunnsbildet til knappen */
 }
 
 .shopItems:hover {
-    opacity: 86%;
+    opacity: 86%; /* Gjør elementet gjennomsiktig ved hover */
 }
 
 .shopItemsText {
-    padding-left: 2%;
-}
-
-
-
-#clickerPowerCostDisplay {
+    padding-left: 2%; /* Innrykk for tekst i butikkelementene */
 }
